@@ -1,10 +1,10 @@
 <template>
   <nav>
-    <a href="/">Home</a> |
-    <a href="/work/">Work</a> |
-    <a href="/blog/">Blog</a> |
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
+    <router-link class="tab" to="/">Home</router-link>
+    <router-link class="tab" to="/work/">Work</router-link>
+    <router-link class="tab" to="/blog/">Blog</router-link>
+    <router-link class="tab" to="/about/">About</router-link>
+    <router-link class="tab" to="/contact/">Contact</router-link>
   </nav>
 </template>
 
@@ -21,5 +21,15 @@ export default {
 </script>
 
 <style scoped>
-
+nav {
+  border-style: solid;
+  display: flex;
+  justify-content: flex-start;
+}
+.tab {
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
 </style>

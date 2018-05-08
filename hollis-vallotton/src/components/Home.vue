@@ -1,14 +1,14 @@
 <template>
-  <div id="home">
-    <nav-bar />
-    <img src="../assets/cowboy_me.png">
-    <p>{{ msg }}</p>
+  <div class="screen" id="home">
+    <div class="half-screen black">
+      <nav-bar />
+    </div>
+    <div class="half-screen white"></div>
   </div>
 </template>
 
 <script>
-import NavBar from './NavBar'
-
+import NavBar from './NavBar.vue'
 export default {
   name: 'Home',
   data () {
@@ -24,7 +24,5 @@ export default {
 </script>
 
 <style scoped>
-#id {
-  border-style: 'solid'
-}
+
 </style>
