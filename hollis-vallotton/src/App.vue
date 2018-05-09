@@ -1,20 +1,28 @@
-import NavBar from
 <template>
   <div id="app">
       <home />
       <work />
+      <blog />
+      <about />
+      <contact />
   </div>
 </template>
 
 <script>
 import Home from './components/Home'
 import Work from './components/Work'
+import Blog from './components/Blog'
+import About from './components/About'
+import Contact from './components/Contact'
 
 export default {
   name: 'App',
   components: {
     home: Home,
-    work: Work
+    work: Work,
+    blog: Blog,
+    about: About,
+    contact: Contact
   }
 }
 </script>
@@ -54,5 +62,9 @@ body{
 
 .white {
   background-color: white;
+}
+
+.pink {
+  background-color: #fff0f5;
 }
 </style>

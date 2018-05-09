@@ -1,9 +1,9 @@
 <template>
   <div class="screen" id="home">
-    <div class="half-screen black">
+    <div class="half-screen black"></div>
+    <div class="half-screen white">
       <nav-bar />
     </div>
-    <div class="half-screen white"></div>
   </div>
 </template>
 
