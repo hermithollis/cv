@@ -1,35 +1,51 @@
 <template>
   <nav>
-    <router-link class="tab" to="/">Home</router-link>
-    <router-link class="tab" to="/about/">About</router-link>
-    <router-link class="tab" to="/work/">Work</router-link>
-    <router-link class="tab" to="/blog/">Blog</router-link>
-    <router-link class="tab" to="/contact/">Contact</router-link>
+    <tab v-for="tab in tabs" :key="tab.name" v-bind:name="tab.name" v-bind:url="tab.url"  v-bind:tabs="tab" />
   </nav>
 </template>
 
 <script>
+import Link from  '@/components/Link'
 export default {
   name: 'NavBar',
   data () {
     return {
-      msg: 'Hollis Vallotton',
-      name: 'Home'
+      tabs: [
+        {
+          name: "Home",
+          url: "/"
+        },
+        {
+          name: "About",
+          url: "/about/"
+        },
+        {
+          name: "Work",
+          url: "/work/"
+        },
+        {
+          name: "Blog",
+          url: "/blog/"
+        },
+        {
+          name: "Contact",
+          url: "/contact/"
+        }
+      ]
     }
+  },
+  components: {
+    tab: Link,
   }
 }
 </script>
 
 <style scoped>
+
 nav {
-  border-style: solid;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
+  background-color: #eaeceb;
 }
-.tab {
-  padding: 5px;
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
-}
+
 </style>

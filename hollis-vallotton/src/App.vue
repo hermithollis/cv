@@ -1,9 +1,9 @@
 <template>
   <div id="app">
       <home />
+      <about />
       <work />
       <blog />
-      <about />
       <contact />
   </div>
 </template>
@@ -14,6 +14,8 @@ import Work from './components/Work'
 import Blog from './components/Blog'
 import About from './components/About'
 import Contact from './components/Contact'
+import {order} from '@/objects'
+import router from '@/router/'
 
 export default {
   name: 'App',
@@ -23,11 +25,35 @@ export default {
     blog: Blog,
     about: About,
     contact: Contact
+  },
+  methods: {
+    handleScroll () {
+      // const doc = document.documentElement
+      // const top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0)
+      // const sectionHeight =  Math.max(document.documentElement.clientHeight, window.innerHeight || 0) ;
+      // let section;
+      // for (let route in order){
+      //   const next =  sectionHeight * route;
+      //   const previous = next - sectionHeight
+      //   // if(top > previous && top < next){
+      //   //   section = order[route];
+      //   //   router.replace(`/${section.toLowerCase()}/`)
+      //   // }
+      // }
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 html {
   background: black;
 }

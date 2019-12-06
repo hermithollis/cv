@@ -1,7 +1,5 @@
 <template>
-  <div class="screen" id="blog">
-    <div class="half-screen pink"></div>
-    <div class="half-screen black"></div>
+  <div class="screen white" id="blog">
   </div>
 </template>
 
