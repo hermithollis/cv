@@ -2,18 +2,17 @@
   <router-link v-bind:class="{ tab: true, hover }" v-bind:to="url">{{ name }}</router-link>
 </template>
 
-
 <script>
 export default {
   data () {
     return {
-      hover: false,
+      hover: false
     }
   },
   props: ['name', 'url'],
   methods: {
-    mouseOver: function (){
-      this.hover = !this.hover;
+    mouseOver: function () {
+      this.hover = !this.hover
     }
   }
 }

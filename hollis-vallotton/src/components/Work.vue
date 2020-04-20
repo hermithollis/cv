@@ -1,6 +1,6 @@
 <template>
   <div class="screen black" id="work">
-    <div class="half-screen pink">
+    <div class="half-screen white">
       <div>
         <p>Work</p>
       </div>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped>
-div .pink{
+div .white {
   display: flex;
   align-items: center;
   justify-content: center;

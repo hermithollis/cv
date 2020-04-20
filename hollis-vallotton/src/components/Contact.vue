@@ -1,5 +1,7 @@
 <template>
-  <div class="screen pink" id="blog"></div>
+  <div class="screen black" id="contact">
+    <p>Contact</p>
+  </div>
 </template>
 
 <script>
@@ -14,5 +16,15 @@ export default {
 </script>
 
 <style scoped>
-
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  color: white;
+  font-family: 'Montserrat' sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+}
 </style>

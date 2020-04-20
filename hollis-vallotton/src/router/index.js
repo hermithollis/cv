@@ -11,10 +11,15 @@ import {order} from '@/objects'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/home/',
       name: 'Home',
       component: Home
     },
@@ -43,9 +48,10 @@ export default new Router({
   scrollBehavior (to, from, savedPosition) {
     const destination = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * order.indexOf(to.name)
     scrollIt(destination, 500, 'easeInOutQuad')
-
     if (savedPosition) return savedPosition
     if (to.hash) return { selector: to.hash }
-    return {x: 0, y: Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * order.indexOf(to.name)}
+    return {x: 0, y: destination}
   }
 })
+
+export default router

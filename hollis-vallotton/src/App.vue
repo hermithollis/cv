@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+      <nav-bar/>
       <home />
       <about />
       <work />
@@ -15,7 +16,8 @@ import Blog from './components/Blog'
 import About from './components/About'
 import Contact from './components/Contact'
 import {order} from '@/objects'
-import router from '@/router/'
+import router from '@/router'
+import NavBar from './components/NavBar'
 
 export default {
   name: 'App',
@@ -24,29 +26,40 @@ export default {
     work: Work,
     blog: Blog,
     about: About,
-    contact: Contact
+    contact: Contact,
+    'nav-bar': NavBar
   },
   methods: {
-    handleScroll () {
-      // const doc = document.documentElement
-      // const top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0)
-      // const sectionHeight =  Math.max(document.documentElement.clientHeight, window.innerHeight || 0) ;
-      // let section;
-      // for (let route in order){
-      //   const next =  sectionHeight * route;
-      //   const previous = next - sectionHeight
-      //   // if(top > previous && top < next){
-      //   //   section = order[route];
-      //   //   router.replace(`/${section.toLowerCase()}/`)
-      //   // }
-      // }
+    handleScroll (event) {
+      clearTimeout(this.scrollTimeout)
+      const doc = document.documentElement
+      const currentTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
+      const sectionHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+      const { pathname } = window.location
+      let section
+      for (let route in order) {
+        const nextTop = sectionHeight * route
+        const previousBottom = nextTop - sectionHeight
+        const halfOffset = sectionHeight / 2
+        const isInPrevious = currentTop > nextTop + halfOffset && currentTop < previousBottom - halfOffset
+        const isInNext = currentTop > previousBottom + halfOffset && currentTop < nextTop + halfOffset
+        if (isInPrevious || isInNext) {
+          section = order[route]
+          break
+        }
+      }
+      if (section && !pathname.includes(section.toLowerCase())) {
+        this.scrollTimeout = setTimeout(() => {
+          router.push(`/${section.toLowerCase()}/`)
+        }, 400)
+      }
     }
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   },
   destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -74,7 +87,6 @@ body{
   background-color:black;
   display:flex;
   align-items:stretch;
-  position:relative;
 }
 
 .half-screen {

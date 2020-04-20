@@ -1,22 +1,28 @@
 <template>
   <div class="screen" id="home">
     <div class="half-screen black">
-      <div>
-        <p>Hollis Vallotton</p>
-        <p>Fullstack developer</p>
+      <div class="left-container">
+        <div class="info-container">
+          <p>Hollis Vallotton</p>
+          <p>Fullstack developer</p>
+        </div>
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <vllttch-slider class="slider" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="half-screen white">
-      <nav-bar />
       <div>
-        <img src="@/assets/my_handsome_self.jpg">
+        <img src="@/assets/me.jpeg">
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
+import Slider from '@/components/Slider'
 export default {
   name: 'Home',
   data () {
@@ -26,7 +32,7 @@ export default {
     }
   },
   components: {
-    'nav-bar': NavBar
+    'vllttch-slider': Slider
   }
 }
 </script>
@@ -38,7 +44,9 @@ div .white div {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  height: 100%;
 }
+
 img {
     flex-shrink: 0;
     min-width: 100%;
@@ -55,6 +63,42 @@ p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  color: #fff0f5
+  color: white;
+}
+
+.left-container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 9fr 1fr;
+  grid-template-areas:
+    "content"
+    "slider";
+}
+
+.info-container {
+  align-self: center;
+}
+
+.slider {
+  bottom: 10px;
+  left: 10px;
+  align-self: end;
+}
+
+.slider-container {
+  display:flex;
+  width: 100%;
+  justify-self: center;
+  align-self: flex-end;
+  justify-content: center;
+  align-content: center;
+  height: 50px;
+}
+
+.slider-wrapper {
+  width: 90%;
+  align-self: center;
 }
 </style>
