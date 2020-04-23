@@ -1,22 +1,8 @@
 <template>
-  <div class="screen" id="home">
-    <div class="half-screen black">
-      <div class="left-container">
-        <div class="info-container">
-          <p>Hollis Vallotton</p>
-          <p>Fullstack developer</p>
-        </div>
-        <div class="slider-container">
-          <div class="slider-wrapper">
-            <vllttch-slider class="slider" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="half-screen white">
-      <div>
-        <img src="@/assets/me.jpeg">
-      </div>
+  <div class="screen darken" id="home">
+    <div class="info-container typewriter">
+      <p>Hollis Vallotton</p>
+      <p class='type'>Fullstack developer</p>
     </div>
   </div>
 </template>
@@ -38,13 +24,15 @@ export default {
 </script>
 
 <style scoped>
-
-div .white div {
+#home {
+  background-size: cover;
   display:flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
-  height: 100%;
+}
+
+.darken {
+  background-image: linear-gradient(rgba(2, 43, 58, 0.5), rgba(2, 43, 58, 0.5)), url('../assets/cover.jpg');
 }
 
 img {
@@ -61,44 +49,43 @@ div .black{
 
 p {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 200;
   font-size: 40px;
   color: white;
-}
-
-.left-container {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: 1fr;
-  grid-template-rows: 9fr 1fr;
-  grid-template-areas:
-    "content"
-    "slider";
+  white-space: nowrap;
+  letter-spacing: .15em;
 }
 
 .info-container {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px white solid;
+  border-style: solid;
+  margin-left: 10%;
+  padding: 20px;
 }
 
-.slider {
-  bottom: 10px;
-  left: 10px;
-  align-self: end;
+.typewriter .type {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #C493B7; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 2.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
-.slider-container {
-  display:flex;
-  width: 100%;
-  justify-self: center;
-  align-self: flex-end;
-  justify-content: center;
-  align-content: center;
-  height: 50px;
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-.slider-wrapper {
-  width: 90%;
-  align-self: center;
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color:#C493B7; }
 }
 </style>

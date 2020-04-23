@@ -50,12 +50,11 @@ export default {
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: white;
+  background-color: transparent;
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   position: fixed;
-  border-color: white;
 }
 </style>

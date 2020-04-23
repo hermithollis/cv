@@ -21,12 +21,13 @@ export default {
 <style scoped>
 .tab {
   padding: 5px;
-  color: black;
+  color:white;
   font-size: 20px;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
 }
-.hover {
-  background-color: white;
+.tab:hover {
+  color: #022B3A;
+  color: #CA9EB7
 }
 </style>
