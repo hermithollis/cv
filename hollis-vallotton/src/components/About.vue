@@ -1,5 +1,5 @@
 <template>
-  <div class="screen black" id="about">
+  <div class="screen vllttch-blue" id="about">
     <p>About me</p>
   </div>
 </template>

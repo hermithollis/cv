@@ -102,7 +102,11 @@ body{
   background-color: white;
 }
 
-.pink {
-  background-color: #fff0f5;
+.vllttch-blue {
+  background-color: #022B3A;
+}
+
+.vllttch-pink {
+  background-color: #C49EB7;
 }
 </style>

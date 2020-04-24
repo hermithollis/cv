@@ -1,5 +1,5 @@
 <template>
-  <div class="screen white" id="blog">
+  <div class="screen vllttch-blue" id="blog">
       <p>Blog</p>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   align-items: center;
 }
 p {
-  color: black;
+  color: white;
   font-family: 'Montserrat' sans-serif;
   font-weight: 700;
   font-size: 40px;

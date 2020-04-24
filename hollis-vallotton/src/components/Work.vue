@@ -1,6 +1,6 @@
 <template>
   <div class="screen black" id="work">
-    <div class="half-screen white">
+    <div class="half-screen vllttch-blue">
       <div>
         <p>Work</p>
       </div>
@@ -27,7 +27,7 @@ div .white {
   justify-content: center;
 }
 p {
-  color: black;
+  color: white;
   font-family: 'Montserrat' sans-serif;
   font-weight: 700;
   font-size: 40px;
