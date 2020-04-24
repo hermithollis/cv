@@ -42,9 +42,13 @@ const router = new Router({
       path: '/contact/',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '*',
+      cmoponent: Home
     }
   ],
-  mode: 'history',
+  mode: 'hash',
   scrollBehavior (to, from, savedPosition) {
     const destination = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * order.indexOf(to.name)
     scrollIt(destination, 500, 'easeInOutQuad')
