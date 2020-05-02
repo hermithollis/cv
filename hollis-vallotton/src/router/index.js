@@ -1,53 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-import Home from '@/components/Home'
-import Work from '@/components/Work'
-import Blog from '@/components/Blog'
-import About from '@/components/About'
-import Contact from '@/components/Contact'
 import scrollIt from '@/helpers/'
-import {order} from '@/objects'
+import {orderArray, order} from '@/objects'
+import {toUrl} from '@/helpers'
+import Home from '@/components/Home'
 
 Vue.use(Router)
 
+const createRoutes = () => {
+  const routes = []
+  routes.push({
+    path: '/',
+    name: 'Home',
+    component: Home
+  })
+  orderArray.map(section => {
+    routes.push({
+      path: toUrl(section.name),
+      ...section
+    })
+  })
+  routes.push({
+    path: '*',
+    component: Home
+  })
+  return routes
+}
 const router = new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/home/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/about/',
-      name: 'About',
-      component: About
-    },
-    {
-      path: '/work/',
-      name: 'Work',
-      component: Work
-    },
-    {
-      path: '/blog/',
-      name: 'Blog',
-      component: Blog
-    },
-    {
-      path: '/contact/',
-      name: 'Contact',
-      component: Contact
-    },
-    {
-      path: '*',
-      cmoponent: Home
-    }
-  ],
+  routes: createRoutes(),
   mode: 'hash',
   scrollBehavior (to, from, savedPosition) {
     const destination = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * order.indexOf(to.name)

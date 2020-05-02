@@ -12,32 +12,20 @@
 
 <script>
 import Link from '@/components/Link'
+import {order} from '@/objects'
+import {toUrl} from '@/helpers'
+
+const createTabs = () => {
+  return order.map(section => ({
+    name: section,
+    url: toUrl(section)
+  }))
+}
 export default {
   name: 'NavBar',
   data () {
     return {
-      tabs: [
-        {
-          name: 'Home',
-          url: '/home/'
-        },
-        {
-          name: 'About',
-          url: '/about/'
-        },
-        {
-          name: 'Work',
-          url: '/work/'
-        },
-        {
-          name: 'Blog',
-          url: '/blog/'
-        },
-        {
-          name: 'Contact',
-          url: '/contact/'
-        }
-      ]
+      tabs: createTabs()
     }
   },
   components: {

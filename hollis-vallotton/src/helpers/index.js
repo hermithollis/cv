@@ -75,3 +75,5 @@ export default function scrollIt (destination, duration = 200, easing = 'linear'
 
   scroll()
 }
+
+export const toUrl = (name) => `/${name.toLowerCase()}/`

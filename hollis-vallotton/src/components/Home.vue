@@ -25,14 +25,17 @@ export default {
 
 <style scoped>
 #home {
-  background-size: cover;
   display:flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
+  overflow: hidden;
 }
 
 .darken {
-  background-image: linear-gradient(rgba(2, 43, 58, 0.5), rgba(2, 43, 58, 0.5)), url('../assets/cover.jpg');
+  background: linear-gradient(rgba(2, 43, 58, 0.5), rgba(2, 43, 58, 0.5)), url('../assets/cover_happy.jpg');
+  background-repeat: no-repeat;
+  background-position: 0% 65%;
+  background-size: 100% auto;
 }
 
 img {
@@ -59,10 +62,10 @@ p {
 .info-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   border: 1px white solid;
   border-style: solid;
-  margin-left: 10%;
+  margin-right: 10%;
   padding: 20px;
 }
 
