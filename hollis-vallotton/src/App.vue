@@ -1,33 +1,36 @@
 <template>
   <div id="app">
-      <nav-bar/>
-      <home />
-      <about />
-      <work />
-      <blog />
-      <contact />
+    <component :is='component.name.toLowerCase()' v-for="component in components" v-bind:key="component.name"></component>
   </div>
 </template>
 
 <script>
-import Home from './components/Home'
-import Work from './components/Work'
-import Blog from './components/Blog'
-import About from './components/About'
-import Contact from './components/Contact'
-import {order} from '@/objects'
+import {order, orderArray} from '@/objects'
 import router from '@/router'
 import NavBar from './components/NavBar'
 
+const buildComponentsObject = () => {
+  let components = {}
+  components['nav-bar'] = NavBar
+  orderArray.forEach(section => {
+    components[section.name.toLowerCase()] = section.component
+  })
+  return components
+}
+
+const buildComponentsArray = () => {
+  let components = []
+  components = [{name: 'nav-bar', component: NavBar}, ...orderArray]
+  return components
+}
+
 export default {
   name: 'App',
-  components: {
-    home: Home,
-    work: Work,
-    blog: Blog,
-    about: About,
-    contact: Contact,
-    'nav-bar': NavBar
+  components: buildComponentsObject(),
+  data: function () {
+    return {
+      components: buildComponentsArray()
+    }
   },
   methods: {
     handleScroll (event) {
@@ -35,7 +38,7 @@ export default {
       const doc = document.documentElement
       const currentTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
       const sectionHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-      const { pathname } = window.location
+      const {hash} = window.location
       let section
       for (let route in order) {
         const nextTop = sectionHeight * route
@@ -48,7 +51,7 @@ export default {
           break
         }
       }
-      if (section && !pathname.includes(section.toLowerCase())) {
+      if (section && !hash.includes(section.toLowerCase())) {
         this.scrollTimeout = setTimeout(() => {
           router.push(`/${section.toLowerCase()}/`)
         }, 400)
