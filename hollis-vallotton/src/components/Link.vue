@@ -37,6 +37,7 @@ div {
   display: flex;
   justify-content: center;
 }
+
 .tab {
   padding: 5px;
   color:white;
@@ -44,6 +45,7 @@ div {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
 }
+
 .tab:hover {
   color: #022B3A;
   color: #CA9EB7
