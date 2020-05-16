@@ -1,5 +1,5 @@
 <template>
-  <div class="screen darken" id="home">
+  <div class='screen darken' :class='webpclass' id="home">
     <div class="info-container typewriter">
       <p>Hollis Vallotton</p>
       <p class='type'>Fullstack developer</p>
@@ -9,13 +9,19 @@
 
 <script>
 import Slider from '@/components/Slider'
+import {canUseWebP} from '@/helpers'
 export default {
   name: 'Home',
   data () {
     return {
       msg: 'Hollis Vallotton',
-      name: 'Home'
+      name: 'Home',
+      webpclass: 'webp'
     }
+  },
+  created: function () {
+    const supportsWebP = canUseWebP()
+    this.webpclass = supportsWebP ? 'webp' : 'no-webp'
   },
   components: {
     'vllttch-slider': Slider
@@ -31,8 +37,14 @@ export default {
   overflow: hidden;
 }
 
+.no-webp {
+  background: linear-gradient(rgba(2, 43, 58, 0.5), rgba(2, 43, 58, 0.5)), url('../assets/cover.jpg');
+}
+.webp {
+  background: linear-gradient(rgba(2, 43, 58, 0.5), rgba(2, 43, 58, 0.5)), url('../assets/cover.webp');
+}
+
 .darken {
-  background: linear-gradient(rgba(2, 43, 58, 0.5), rgba(2, 43, 58, 0.5)), url('../assets/cover_happy.jpg');
   background-repeat: no-repeat;
   background-position: 0% 65%;
   background-size: 100% auto;
