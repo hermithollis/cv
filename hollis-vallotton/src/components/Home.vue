@@ -32,8 +32,8 @@ export default {
 <style scoped>
 #home {
   display:flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
@@ -46,14 +46,14 @@ export default {
 
 .darken {
   background-repeat: no-repeat;
-  background-position: 0% 65%;
-  background-size: 100% auto;
+  background-position: 0% 60%;
+  background-size: auto 100%;
 }
 
 img {
     flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
 div .black{
@@ -65,7 +65,7 @@ div .black{
 p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
-  font-size: 40px;
+  font-size: 4.5vw;
   color: white;
   white-space: nowrap;
   letter-spacing: .15em;
@@ -74,11 +74,11 @@ p {
 .info-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  border: 1px white solid;
-  border-style: solid;
-  margin-right: 10%;
+  align-items: center;
+  margin-right: 1vw;
   padding: 20px;
+  width: 80vw;
+  margin-top: 10vh;
 }
 
 .typewriter .type {
@@ -102,5 +102,41 @@ p {
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color:#C493B7; }
+}
+
+@media only screen and (min-device-width: 545px) {
+.darken {
+  background-repeat: no-repeat;
+  background-position: 0% 65%;
+  background-size: 100% auto;
+}
+
+img {
+    flex-shrink: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin-right: 10%;
+  padding: 20px;
+  width: 60%;
+}
+
+.info-container .type {
+  margin-right: 0;
+}
+
+#home {
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+}
+
 }
 </style>

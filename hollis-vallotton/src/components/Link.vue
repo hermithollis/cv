@@ -35,18 +35,41 @@ export default {
 div {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .tab {
-  padding: 5px;
-  color:white;
   font-size: 20px;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  text-decoration: none;
+  color: var(--dark-blue);
+  opacity: 0;
+
+  transition: opacity 150ms ease-in-out;
 }
 .tab:hover {
-  color: #022B3A;
-  color: #CA9EB7
+  color: var(--light-pink);
+  cursor: pointer;
+}
+
+.nav-toggle:checked ~ nav .tab {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+a {
+  color: inherit;
+}
+
+@media only screen and (min-device-width: 834px) {
+  .tab {
+    color: white;
+    opacity: 1;
+    margin: 0;
+    width: 100%;
+  }
 }
 
 </style>

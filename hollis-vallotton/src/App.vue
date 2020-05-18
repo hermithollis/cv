@@ -70,6 +70,11 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+:root{
+  --dark-blue: #022B3A;
+  --light-pink: #CA9EB7;
+}
+
 html {
   background: black;
 }
@@ -85,6 +90,7 @@ body{
 }
 .screen {
   height: 100vh;
+  width: 100vw;
   min-height:100%;
   min-width:100%;
   background-color:black;
@@ -93,8 +99,8 @@ body{
 }
 
 .half-screen {
-  height: 100%;
-  width: 50%;
+  height: 100vh;
+  width: 50vw;
 }
 
 .black {

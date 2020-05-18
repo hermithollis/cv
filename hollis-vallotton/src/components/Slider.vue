@@ -16,7 +16,6 @@ export default {
 <style scoped>
 .vllttch-slider {
   color: white;
-  border: 1px solid red;
   width: 100%;
 }
 </style>
