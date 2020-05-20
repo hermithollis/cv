@@ -1,11 +1,9 @@
 <template>
   <div class="screen black" id="work">
-    <div class="half-screen vllttch-blue">
       <div>
-        <p>Work</p>
+        <p>Tech stack</p>
       </div>
     </div>
-    <div class="half-screen black"></div>
   </div>
 </template>
 

@@ -1,6 +1,8 @@
 <template>
   <header>
-  <h1 id="logo">HV</h1>
+  <div id="logo-container">
+    <div id="logo"></div>
+  </div>
   <input type='checkbox' id="nav-toggle" class="nav-toggle"/>
   <nav class="nav-mobile">
     <tab
@@ -50,12 +52,30 @@ header {
   display: flex;
   justify-content: flex-start;
 }
+
 #logo {
+  background-size: cover;
   margin: 0;
   margin-left: 0.5em;
   color: var(--dark-blue);
   font-weight: 100;
   font-size: 30px;
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  background-image: url('../assets/logo-blue.svg');
+}
+
+#logo:hover {
+  background-image: url('../assets/logo-pink.svg');
+}
+
+#logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1vw;
+  padding-left: 3vw;
 }
 /* .nav-desktop {
   display: flex;
@@ -98,11 +118,11 @@ header {
 }
 
 .nav-toggle-label span::before {
-  bottom: 13px;
+  bottom: 22px;
 }
 
 .nav-toggle-label span::after {
-  top: 13px;
+  top: 22px;
 }
 
 nav {
@@ -143,6 +163,10 @@ nav {
   #logo {
     grid-column: 1/1;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/logo-white.svg');
   }
 
 }

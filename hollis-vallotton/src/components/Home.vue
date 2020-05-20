@@ -124,7 +124,6 @@ img {
   justify-content: center;
   margin-right: 10%;
   padding: 20px;
-  width: 60%;
 }
 
 .info-container .type {
@@ -138,5 +137,16 @@ img {
   overflow: hidden;
 }
 
+p {
+  font-size: 3.5vw;
 }
+
+}
+
+@media only screen and (min-device-width: 850px) {
+  p{
+    font-size: 30px;
+  }
+}
+
 </style>
