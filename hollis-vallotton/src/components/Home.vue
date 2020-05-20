@@ -77,7 +77,6 @@ p {
   align-items: center;
   margin-right: 1vw;
   padding: 20px;
-  width: 80vw;
   margin-top: 10vh;
 }
 
