@@ -73,6 +73,7 @@ export default {
 :root{
   --dark-blue: #022B3A;
   --light-pink: #CA9EB7;
+  --icon-size: 10vw;
 }
 
 html {
