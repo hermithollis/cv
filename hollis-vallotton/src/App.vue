@@ -54,7 +54,7 @@ export default {
       if (section && !hash.includes(section.toLowerCase())) {
         this.scrollTimeout = setTimeout(() => {
           router.push(`/${section.toLowerCase()}/`)
-        }, 400)
+        }, 4000)
       }
     }
   },
