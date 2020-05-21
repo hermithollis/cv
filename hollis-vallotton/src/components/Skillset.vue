@@ -44,17 +44,21 @@ export default {
     "libraries libraries testing testing"
     "other other other other";
   grid-template-rows: 1fr 8fr 8fr 8fr 8fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 h2 {
   color: white;
   margin: 0;
   margin-top: 0.5em;
+  font-weight: 100;
 }
 
 .title-div {
   grid-area: title;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1.5vw;
 }
 
 p {
@@ -62,5 +66,19 @@ p {
   font-family: 'Montserrat' sans-serif;
   font-weight: 700;
   font-size: 40px;
+}
+
+@media only screen and (min-device-width: 650px) {
+.content {
+  grid-template-areas:
+    "title title title title"
+    "frontend frontend frontend frontend"
+    "backend backend backend databases"
+    "libraries libraries testing testing"
+    "other other other other";
+  grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+  padding: 2vw;
+}
+
 }
 </style>
