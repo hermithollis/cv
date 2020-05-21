@@ -52,13 +52,14 @@ h2 {
   margin: 0;
   margin-top: 0.5em;
   font-weight: 100;
+  font-size: 1.5em;
 }
 
 .title-div {
   grid-area: title;
   display: flex;
   justify-content: flex-start;
-  padding: 1.5vw;
+  padding: 3.5vh 1vw 2vh 1vw;
 }
 
 p {
@@ -77,7 +78,8 @@ p {
     "libraries libraries testing testing"
     "other other other other";
   grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
-  padding: 2vw;
+  padding: 3vw;
+  margin-top: 0px;
 }
 
 }
