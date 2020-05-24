@@ -43,14 +43,14 @@ export default {
    align-items: center;
    flex: 1 0 21%; /* explanation below */
    padding: 5px;
-   height: 5vw;
-   width: 5vw;
+   height: calc(2vw + 2vh);
+   width: calc(2vw + 2vh);
 }
 .tech-icon {
   background-repeat: no-repeat;
-  background-size: 5vw 5vw;
-  height: 5vw;
-  width: 5vw;
+  background-size: calc(2vw + 2vh), calc(2vw + 2vh);
+  height: calc(2vw + 2vh);
+  width: calc(2vw + 2vh);
   margin-right: 1vw;
 
 }
