@@ -3,9 +3,9 @@
     <h1>I'm a compulsive learner</h1>
     <div class="description">
       <p>If I don't know it, I'll be happy to learn it so I can solve a problem. I've been doing this for 4 years and I don't plan on stopping.</p>
-      <p>That's 4 years of experience developing user interfaces, back end API’s, designing databases, 
-        debugging and testing features as well as architecting and implementing solutions and features. 
-        Experience managing a team of two people in order to deliver a product. Proven ability to develop 
+      <p>That's 4 years of experience developing user interfaces, back end API’s, designing databases,
+        debugging and testing features as well as architecting and implementing solutions and features.
+        Experience managing a team of two people in order to deliver a product. Proven ability to develop
         new features and improve those already in place.</p>
     </div>
     <!-- <p id='process'>Understand -> Think -> Investigate -> Learn -> Architect  -> Implement -> Solve</p> -->

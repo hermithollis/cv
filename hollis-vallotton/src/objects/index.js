@@ -128,3 +128,10 @@ export const skillset = [
     ]
   }
 ]
+
+export const constants = {
+  email: 'hollis.d.vallotton@gmail.com',
+  resume_url: 'https://hollisvallottondev.github.io',
+  github: 'https://github.com/hollisvallottondev',
+  linked_in: 'https://www.linkedin.com/in/hollis-vallotton/'
+}
