@@ -96,6 +96,7 @@ textarea {
   border-bottom: 1px solid white;
   font-family: var(--font-family);
   margin-bottom: calc(2vw + 2vh);
+  font-size: 1em;
 }
 
 .form-input:focus {
