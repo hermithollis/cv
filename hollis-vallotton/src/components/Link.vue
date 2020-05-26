@@ -40,7 +40,7 @@ div {
 .tab {
   font-size: 20px;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family:  var(--font-family);
   margin-bottom: 1em;
   margin-right: 1em;
   text-decoration: none;

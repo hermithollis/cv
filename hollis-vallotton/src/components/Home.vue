@@ -63,7 +63,7 @@ div .black{
 }
 
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
   font-weight: 200;
   font-size: 4.5vw;
   color: white;

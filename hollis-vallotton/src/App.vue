@@ -73,7 +73,8 @@ export default {
 :root{
   --dark-blue: #022B3A;
   --light-pink: #CA9EB7;
-  --icon-size: 10vw;
+  --icon-size: calc(3vw + 3vh);
+  --font-family: 'Montserrat' sans-serif;
 }
 
 html {

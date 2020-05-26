@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head id="head">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Hollis Vallotton</title>
@@ -17,7 +17,8 @@
       type="image/png"
     />
     <script>
-      const favicon = document.createElement("link");
+      const link = document.createElement("link");
+      const head = document.getElementById("head")
       link.setAttribute("rel", "favicon icon");
       head.appendChild(link);
 

@@ -36,7 +36,7 @@ h1 {
   font-weight: 100;
 }
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family:  var(--font-family);
   font-weight: 400;
   font-size: 2vh;
   color: white;
@@ -44,7 +44,7 @@ p {
   line-height: 1.5em;
 }
 #process {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
   font-weight: 200;
   font-size: 20px;
   color: white;

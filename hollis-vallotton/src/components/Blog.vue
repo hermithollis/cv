@@ -23,7 +23,7 @@ export default {
 }
 p {
   color: white;
-  font-family: 'Montserrat' sans-serif;
+  font-family:  var(--font-family);
   font-weight: 700;
   font-size: 40px;
 }
