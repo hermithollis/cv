@@ -55,7 +55,7 @@ h2 {
 .title-div {
   grid-area: title;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 3.5vh 1vw 2vh 1vw;
 }
 
