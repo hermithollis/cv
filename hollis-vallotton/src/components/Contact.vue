@@ -162,6 +162,7 @@ p {
   font-size: 1em;
   font-weight: 100;
   margin: 0;
+  border-radius: 5vh;
 }
 .or {
  font-size: 1.25em;
