@@ -1,8 +1,8 @@
 <template>
-  <div class="screen black" id="skillset">
+  <div class="screen vllttch-blue" id="skillset">
       <div class="content">
         <div class="title-div">
-          <h2>Skillset</h2>
+          <h2 class="title">Skillset</h2>
         </div>
         <SkillSubSet
             v-for="skilltype in skillset"
@@ -48,11 +48,8 @@ export default {
 }
 
 h2 {
-  color: white;
   margin: 0;
   margin-top: 0.5em;
-  font-weight: 100;
-  font-size: 1.5em;
 }
 
 .title-div {

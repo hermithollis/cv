@@ -100,6 +100,12 @@ body{
   align-items:stretch;
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--light-pink);
+}
+
 .half-screen {
   height: 100vh;
   width: 50vw;

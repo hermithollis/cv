@@ -1,7 +1,7 @@
 <template>
-  <div v-on:click="outerBoxClicked(url)">
+  <div v-on:click="outerBoxClicked(url)" :class="currentSection.includes(url)? activeClass : inactiveClass">
     <ripple>
-      <router-link v-bind:class="{ tab: true, hover }" v-bind:to="url">{{ name }}</router-link>
+      <router-link v-bind:class="{ tab: true, hover}" v-bind:to="url">{{ name }}</router-link>
     </ripple>
   </div>
 </template>
@@ -12,11 +12,18 @@ import router from '@/router'
 export default {
   data () {
     return {
-      hover: false
+      hover: false,
+      activeClass: 'active',
+      inactiveClass: 'inactive'
     }
   },
   components: {
     ripple: Ripple
+  },
+  computed: {
+    currentSection () {
+      return this.$route.path
+    }
   },
   props: ['name', 'url'],
   methods: {
@@ -44,9 +51,9 @@ div {
   margin-bottom: 1em;
   margin-right: 1em;
   text-decoration: none;
-  color: var(--dark-blue);
+  color: inherit;
   opacity: 0;
-
+  cursor: pointer;
   transition: opacity 150ms ease-in-out;
 }
 .tab:hover {
@@ -63,12 +70,23 @@ a {
   color: inherit;
 }
 
+.inactive {
+  color: var(--dark-blue);
+}
+
+.active {
+  color: var(--light-pink);
+}
+
 @media only screen and (min-device-width: 834px) {
   .tab {
-    color: white;
+    color: inherit;
     opacity: 1;
     margin: 0;
     width: 100%;
+  }
+  .inactive {
+    color: white;
   }
 }
 

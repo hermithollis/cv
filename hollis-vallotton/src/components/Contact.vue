@@ -1,7 +1,7 @@
 <template>
   <div class="screen vllttch-blue" id="contact">
    <div class="title-div">
-    <p class="lets">Let's connect</p>
+    <h2 class="title lets">Let's connect</h2>
    </div>
    <div class="form-container">
      <form
@@ -121,7 +121,7 @@ textarea {
   transition: 0.2s ease all;
   color: white;
   align-self: flex-start;
-  font-size: 0.75em;
+  font-size: 1em;
   margin-bottom: 5px;
 }
 
@@ -176,8 +176,6 @@ p {
   color: inherit;
 }
 .lets {
-  font-size: 1.75em;
-  font-weight: 100;
   margin: 0;
 }
 

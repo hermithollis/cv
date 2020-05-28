@@ -1,6 +1,6 @@
 <template>
   <div class="screen vllttch-blue" id="about">
-    <h1>I'm a compulsive learner</h1>
+    <h2 class="title">I'm a compulsive learner</h2>
     <div class="description">
       <p>If I don't know it, I'll be happy to learn it so I can solve a problem. I've been doing this for 4 years and I don't plan on stopping.</p>
       <p>That's 4 years of experience developing user interfaces, back end API’s, designing databases,
@@ -29,11 +29,6 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-h1 {
-  font-size: 3.5vh;
-  color: var(--light-pink);
-  font-weight: 100;
 }
 p {
   font-family:  var(--font-family);

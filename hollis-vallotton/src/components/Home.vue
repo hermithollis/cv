@@ -1,8 +1,8 @@
 <template>
   <div class='screen darken' :class='webpclass' id="home">
     <div class="info-container typewriter">
-      <p>Hollis Vallotton</p>
-      <p class='type'>Fullstack developer</p>
+      <h1 class="text-in-home name">Hollis Vallotton</h1>
+      <h2 class='text-in-home type'>Fullstack developer</h2>
     </div>
   </div>
 </template>
@@ -62,13 +62,20 @@ div .black{
   justify-content: center;
 }
 
-p {
+.name {
+  font-size: 6vw;
+}
+
+.text-in-home {
   font-family: var(--font-family);
   font-weight: 200;
-  font-size: 4.5vw;
   color: white;
   white-space: nowrap;
   letter-spacing: .15em;
+}
+
+.type {
+  font-size: 4vw;
 }
 
 .info-container {
@@ -140,11 +147,25 @@ p {
   font-size: 3.5vw;
 }
 
+  .name {
+    font-size: 4vw;
+  }
+
+  .type {
+    font-size: 3vw;
+  }
 }
 
 @media only screen and (min-device-width: 850px) {
   p{
     font-size: 30px;
+  }
+  .name {
+    font-size: 3.5vw;
+  }
+
+  .type {
+    font-size: 2.5vw;
   }
 }
 
