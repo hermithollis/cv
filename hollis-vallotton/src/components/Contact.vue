@@ -4,11 +4,11 @@
     <h2 class="title lets">Let's connect</h2>
    </div>
    <div class="form-container">
-     <form
-      action="https://mailthis.to/constants.email"
+   <form
+      id="contact-form"
+      v-on:submit.prevent="on_submit"
       method="POST"
-      enctype="multipart/form-data"
-     >
+    >
       <div class="input-container">
         <span class="floating-label">Your name</span>
         <input class="form-input" type="text" name="name"/>
@@ -22,9 +22,7 @@
         <textarea class="form-input" name="message" required></textarea>
       </div>
       <input type="hidden" name="_subject" value="Contact form submitted" />
-      <input type="hidden" name="_after" value="https://hollisvallottondev.github.io/#/contact/" />
-      <input type="hidden" name="_honeypot" value />
-      <input type="hidden" name="_confirmation" value />
+      <input type="hidden" name="_gotcha" value />
       <input type="submit" class="send-button form-input" value="Send" />
     </form>
     </div>
@@ -52,13 +50,35 @@ export default {
   name: 'Contact',
   data () {
     return {
-      name: 'Contact',
       constants
     }
   },
   methods: {
     go_to: (url) => {
       window.open(url, '_blank')
+    },
+    on_submit: (event) => {
+      const {elements} = event.target
+      let payload = {}
+      let data = new FormData()
+
+      Object.keys(elements).forEach(index => {
+        const element = elements[index]
+        payload[element.name] = element.value
+        data.append(element.name, element.value)
+      })
+
+      fetch(constants.formspree,
+        {
+          method: 'POST',
+          body: data,
+          mode: 'no-cors'
+        })
+        .then(function (res) {
+          const frm = document.getElementById('contact-form')
+          frm.reset()
+          alert(`Thank you for your message, I'll get back to you ASAP.`)
+        })
     }
   }
 }
@@ -114,6 +134,7 @@ textarea {
   border: none;
   border-bottom: 1px solid var(--light-pink);
   outline: none;
+  background: transparent;
 }
 
 .floating-label {
@@ -164,6 +185,11 @@ p {
   margin: 0;
   border-radius: 5vh;
 }
+
+.send-button:focus {
+  background-color: var(--light-pink);
+}
+
 .or {
  font-size: 1.25em;
  font-weight: 100;
