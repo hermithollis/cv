@@ -114,14 +114,6 @@ export const skillset = [
         text: 'Webpack'
       },
       {
-        icon: 'prettier.png',
-        text: 'Prettier'
-      },
-      {
-        icon: 'eslint.png',
-        text: 'EsLint'
-      },
-      {
         icon: 'jira.png',
         text: 'Jira'
       }
@@ -136,3 +128,11 @@ export const constants = {
   linked_in: 'https://www.linkedin.com/in/hollis-vallotton/',
   formspree: 'https://formspree.io/xknqjybd'
 }
+
+export const about = [
+  `I'm a software engineer with experience working in most parts of a project such as deploying, database design, front-end and back-end. Most of that experience is divided between frontend and backend with the former being my main strength. `,
+  `Driven by my mission to simplify people's lives one project at a time, line by line; I always keep in mind that there's no time to waste, especially when performing essential tasks. `,
+  `My passion for simplification and improvement paired with my determination to get things done has led me to build multiple projects which have improved the way users perform their jobs and utilize services offered by my clients. `,
+  `Along my career I've gone from intern to leading a project and I have no intent to stop improving. I consider myself a compulsive learner in a vertical and horizontal sense. During my time as a project lead I had the chance to mentor a younger developer who was in the same position as me when I started and successfully transferring my knowledge to them while simultaneously delivering a product with great impact has been one if not the most rewarding experience I've had during my career. `,
+  `I am currently working as a freelancer and I'm looking for my next challenge in a full time position. Remote opportunities would better suit my current lifestyle but I'm open to relocate if an exciting opportunity comes my way. `
+]

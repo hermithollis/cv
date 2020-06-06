@@ -54,7 +54,7 @@ export default {
       if (section && !hash.includes(section.toLowerCase())) {
         this.scrollTimeout = setTimeout(() => {
           router.push(`/${section.toLowerCase()}/`)
-        }, 4000)
+        }, 3000)
       }
     }
   },
@@ -101,7 +101,7 @@ body{
 }
 
 .title {
-  font-size: 2rem;
+  font-size: calc(2vw + 1vh);
   font-weight: 500;
   color: var(--light-pink);
 }

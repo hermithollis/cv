@@ -169,6 +169,7 @@ p {
   flex: 1;
   padding: 10px 20px 20px 20px;
   color: white;
+  font-weight: 100;
 }
 .send-button {
   padding: 1vh 1vw;
@@ -186,8 +187,11 @@ p {
   border-radius: 5vh;
 }
 
-.send-button:focus {
-  background-color: var(--light-pink);
+.send-button:hover {
+  background-color: white;
+  color: var(--light-pink);
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .or {
@@ -197,7 +201,7 @@ p {
 }
 .icon-text {
   font-size: 1em;
-  font-weight: 100;
+  font-weight: inherit;
   margin: 0;
   color: inherit;
 }
@@ -230,7 +234,9 @@ svg:hover {
 }
 
 .icon-div:hover {
+  font-weight: bold;
   color: var(--light-pink);
+  cursor: pointer;
 }
 
 @media only screen and (min-device-width: 834px) {
