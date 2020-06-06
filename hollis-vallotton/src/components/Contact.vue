@@ -185,6 +185,7 @@ p {
   font-weight: 100;
   margin: 0;
   border-radius: 5vh;
+  -webkit-appearance: none;
 }
 
 .send-button:hover {
