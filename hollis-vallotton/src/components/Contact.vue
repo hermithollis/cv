@@ -31,8 +31,6 @@
           <svg
             fill="#C49EB7"
             xmlns="http://www.w3.org/2000/svg"
-            width="calc(2vw + 3vh)"
-            height="calc(2vw + 3vh)"
             viewBox="0 0 24 24"
           >
             <path
@@ -45,8 +43,6 @@
           <svg
             fill="#C49EB7"
             xmlns="http://www.w3.org/2000/svg"
-            width="calc(2vw + 3vh)"
-            height="calc(2vw + 3vh)"
             viewBox="0 0 24 24"
           >
             <path
@@ -69,36 +65,51 @@ export default {
       constants
     }
   },
+  props: ['handleModal'],
   methods: {
     go_to: url => {
       window.open(url, '_blank')
     },
-    on_submit: event => {
+    on_submit (event) {
+      event.preventDefault()
       const { elements } = event.target
       let data = {}
       let payload = new FormData()
 
       Object.keys(elements).forEach(index => {
         const element = elements[index]
-        data[element.name] = element.value
-        payload.append(element.name, element.value)
+        if (element.value !== 'Send') data[element.name] = element.value
       })
+      data.subject = `${data._subject} by ${data._replyto} on ${new Date()}`
+
+      Object.keys(data).forEach(key => {
+        payload.append(name, data[key])
+      })
+
+      const showModal = () => {
+        this.$emit('showModal', {
+          modalHeader: 'Message submited!',
+          modalBody: 'Thank you for your message, I\'ll get back to you ASAP.',
+          modalFooter: '',
+          modalButtonText: 'Great!',
+          showModal: true
+        })
+      }
 
       fetch(constants.formspree, {
         method: 'POST',
-        data,
         body: payload,
         mode: 'no-cors'
       })
-        .then(res => {
+        .then((res) => {
           if (res.ok) {
             return res.json()
           }
         })
-        .then(res => {
+        .then((res) => {
           const frm = document.getElementById('contact-form')
           frm.reset()
-          alert(`Thank you for your message, I'll get back to you ASAP.`)
+          showModal()
         })
         .catch(err => {
           console.log(err)
@@ -258,6 +269,15 @@ p {
   flex: 1;
   padding-top: 12vh;
   grid-area: title;
+}
+
+svg {
+  width: -webkit-calc(2vw + 3vh);
+  height: -webkit-calc(2vw + 3vh);
+  width: -moz-calc(2vw + 3vh);
+  height: -moz-calc(2vw + 3vh);
+  width:calc(2vw + 3vh);
+  height:calc(2vw + 3vh);
 }
 
 svg:hover {

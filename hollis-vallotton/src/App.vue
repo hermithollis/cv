@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <component :is='component.name.toLowerCase()' v-for="component in components" v-bind:key="component.name"></component>
+    <component :is='component.name.toLowerCase()'
+      v-for="component in components"
+      v-bind:key="component.name"
+      @showModal="handleModal"
+      @closeModal="closeModal"
+      v-bind:modalInfo="component.name === 'modal'? modalInfo : null">
+    </component>
   </div>
 </template>
 
@@ -8,10 +14,19 @@
 import {order, orderArray} from '@/objects'
 import router from '@/router'
 import NavBar from './components/NavBar'
+import Modal from './components/Modal'
 
+const initialModalState = {
+  modalHeader: '',
+  modalBody: '',
+  modalFooter: '',
+  modalButtonText: '',
+  showModal: false
+}
 const buildComponentsObject = () => {
   let components = {}
   components['nav-bar'] = NavBar
+  components['modal'] = Modal
   orderArray.forEach(section => {
     components[section.name.toLowerCase()] = section.component
   })
@@ -20,7 +35,7 @@ const buildComponentsObject = () => {
 
 const buildComponentsArray = () => {
   let components = []
-  components = [{name: 'nav-bar', component: NavBar}, ...orderArray]
+  components = [{name: 'nav-bar', component: NavBar}, ...orderArray, { name: 'modal', component: Modal }]
   return components
 }
 
@@ -29,7 +44,8 @@ export default {
   components: buildComponentsObject(),
   data: function () {
     return {
-      components: buildComponentsArray()
+      components: buildComponentsArray(),
+      modalInfo: initialModalState
     }
   },
   methods: {
@@ -56,6 +72,12 @@ export default {
           router.push(`/${section.toLowerCase()}/`)
         }, 3000)
       }
+    },
+    handleModal (modalInfo) {
+      this.modalInfo = modalInfo
+    },
+    closeModal () {
+      this.modalInfo = initialModalState
     }
   },
   created () {
