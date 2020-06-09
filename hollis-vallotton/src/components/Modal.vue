@@ -57,6 +57,7 @@ export default {
   width: 75%;
   max-width: 500px;
   height: 30%;
+  min-height: 200px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: var(--dark-blue);
