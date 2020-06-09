@@ -54,8 +54,9 @@ export default {
 }
 
 .modal-container {
-  width: 50%;
-  height: 20%;
+  width: 75%;
+  max-width: 500px;
+  height: 30%;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: var(--dark-blue);
@@ -65,9 +66,7 @@ export default {
   font-family: var(--font-family);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: space-around;
-  /* border: 1px solid white; */
+  justify-content: space-between;
 }
 
 .modal-header h3 {
@@ -78,6 +77,9 @@ export default {
 .modal-body {
   margin: 20px 0;
   color: white;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .modal-button {
@@ -85,17 +87,9 @@ export default {
   color: white;
   border: none;
   border-radius: 25px;
-  height: 100%;
-  width: 20%;
-}
-
-.modal-button {
-  background-color: var(--light-pink);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  height: 100%;
-  width: 20%;
+  height: 75%;
+  width: 40%;
+  max-width: 100px;
   cursor: pointer;
 }
 
@@ -108,9 +102,13 @@ export default {
 .modal-footer {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   height: 20%;
 }
 
+/* .modal-mask div {
+  border: 1px solid white;
+} */
 .modal-enter {
   opacity: 0;
 }
@@ -123,5 +121,12 @@ export default {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+@media only screen and (min-device-width: 834px) {
+ .modal-container {
+  width: 50%;
+  height: 30%;
+ }
 }
 </style>

@@ -215,7 +215,7 @@ p {
   justify-self: flex-end;
   border: none;
   width: 25vw;
-  height: 5vh;
+  height: 4.5vh;
   font-family: var(--font-family);
   font-size: 1em;
   font-weight: 100;
@@ -296,6 +296,7 @@ svg:hover {
   }
   .send-button {
     width: 15vw;
+    height: 5vh;
   }
 }
 </style>
